@@ -35,7 +35,7 @@ nav > ul > li {
   margin-right: 4px;
   margin-left: 4px;
   text-align: center;
-  padding: 15px;
+  padding: 10px;
 }
 
 nav > ul > li > a {
@@ -116,10 +116,22 @@ a:active {
   margin-left: 2.5%;
   margin-right: 2.5%;
   display: inline-block;
+  position: relative;
 }
 
 #posts-principais .post .titulo {
+  position: absolute;
   text-shadow: 1px 1px black;
+  opacity: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  top : 0px;
+  padding: 6px 10px;
+}
+
+
+#posts-principais .post .titulo:hover {
+  opacity: 1;
+  transition: all 1000ms ease;
 }
 
 #posts-principais .post img {
@@ -129,9 +141,6 @@ a:active {
   border: 6px solid white;
   margin-bottom: .5em;
 }
-
-
-
 
 /* --- Principal >> Últimas postagens --- */
 #ultimas-postagens {
@@ -165,6 +174,7 @@ a:active {
 
 /* --- Principal >> Nuvem de tags --- */
 #tags {
+  position: sticky;
   float: right;
   box-sizing: border-box;
   width: 300px;
@@ -175,6 +185,8 @@ a:active {
   background-size: 300px;
   box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5);
   text-align: center;
+  top: 0; /* 🔥 ESSENCIAL */
+  float: right;
 }
 
 #tags h1 {
@@ -301,4 +313,33 @@ a:active {
   color: black;
   border-color: currentColor;
   box-shadow: none;
+}
+
+
+/* --- Novidades --- */
+.novidade::before {
+  content: "Novidade!";
+  display: inline-block;
+  background: darkgreen;
+  border-radius: 3px;
+  padding: 3px 6px;
+}
+
+/* --- Fantasmas --- */
+#fantasmas {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  
+}
+
+#fantasmas img {
+  width: 40px;
+  margin-right: 50px;
+  opacity: 0.5;
+}
+
+#fantasmas img:hover {
+  width: 50px;
+  opacity: 1;
 }
